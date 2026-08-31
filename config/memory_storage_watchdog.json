@@ -1,0 +1,21 @@
+{
+  "custom_warning_threshold_gib": null,
+  "enabled": true,
+  "filesystem_path": ".",
+  "hard_stop_min_free_bytes": 524288000,
+  "schema_version": "memory-storage-watchdog-v0.1",
+  "warning_thresholds_gib": [
+    10,
+    50,
+    100
+  ],
+  "watched_paths": [
+    "knowledge/memory",
+    "knowledge/memory_candidates",
+    "conversations",
+    "summaries",
+    "logs",
+    "imports",
+    "attachments"
+  ]
+}

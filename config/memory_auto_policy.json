@@ -1,0 +1,20 @@
+{
+  "enabled": true,
+  "create_candidates": true,
+  "allowed_categories": [
+    "project",
+    "persona",
+    "preference",
+    "custom-important",
+    "hardware"
+  ],
+  "never_store_categories": [
+    "sensitive",
+    "smalltalk",
+    "low-signal",
+    "noise"
+  ],
+  "auto_approve_categories": [],
+  "allow_durable_auto_promote": false,
+  "auto_promote_categories": []
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "memory-import-settings-v0.1",
+  "enabled": true,
+  "allowed_extensions": [".txt", ".json", ".md"],
+  "default_max_chunk_chars": 1800,
+  "default_max_chunks_per_run": 50,
+  "create_candidates_only": true,
+  "direct_durable_import_allowed": false,
+  "requires_confirmation": "IMPORT_FILE_CANDIDATES",
+  "policy": {
+    "explicit_file_only": true,
+    "no_private_directory_scan": true,
+    "no_direct_durable_memory_by_default": true,
+    "uses_memory_intake_filter": true,
+    "candidates_require_review": true
+  }
+}

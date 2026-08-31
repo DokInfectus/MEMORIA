@@ -1,0 +1,13 @@
+{
+  "schema_version": "memoria-install-consent-v0.1",
+  "accepted": false,
+  "accepted_at": null,
+  "accepted_by": null,
+  "terms_document": "docs/MEMORIA_LOCAL_TERMS.md",
+  "local_read_write_allowed": true,
+  "third_party_upload_allowed": false,
+  "hidden_telemetry_allowed": false,
+  "private_directory_scan_allowed_without_explicit_path": false,
+  "candidate_creation_allowed_by_policy": true,
+  "durable_memory_requires_approval_or_explicit_policy": true
+}
