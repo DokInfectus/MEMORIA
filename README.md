@@ -8,6 +8,30 @@
 
 ---
 
+## Preview / Vorschau
+
+Screenshots from a local development installation, shown in German. MEMORIA supports English and German. These are interface previews, not retrieval benchmarks or a guarantee that every displayed feature is included in the published release. Model, hardware and token-budget values are examples, not requirements.
+
+Screenshots einer lokalen Entwicklungsinstallation in deutscher Sprache. MEMORIA unterstützt Deutsch und Englisch. Die Bilder zeigen die Oberflächen, keinen Retrieval-Benchmark und keine Zusage, dass jede sichtbare Funktion im veröffentlichten Release enthalten ist. Modell, Hardware und Token-Budgets sind Beispiele, keine Voraussetzungen.
+
+### Operating dashboard / Betriebsübersicht
+
+Read-only overview of runtime configuration, the Open WebUI adapter, token budgets and hardware status. “V0.3” identifies the dashboard component, not the MEMORIA release.
+
+Read-only-Übersicht über Runtime-Konfiguration, Open-WebUI-Adapter, Token-Budgets und Hardwarestatus. „V0.3“ bezeichnet die Dashboard-Komponente, nicht den MEMORIA-Release.
+
+![MEMORIA operating dashboard in German](docs/screenshots/memoria-operating-dashboard-de.png)
+
+### Terminal cockpit / Terminal-Cockpit
+
+Administrative main menu for memory workflows, configuration and diagnostics.
+
+Administratives Hauptmenü für Gedächtnisabläufe, Konfiguration und Diagnostik.
+
+![MEMORIA terminal cockpit in German](docs/screenshots/memoria-terminal-cockpit-de.png)
+
+---
+
 ## English
 
 ### What is MEMORIA?
