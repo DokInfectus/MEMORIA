@@ -21,6 +21,7 @@ RELEASE_SIGNER_FINGERPRINTS = {
         "E27B877C3B5AB6C74C33399C9E82CC6E190E5E85"
     ),
     "0.2.0-beta": EXPECTED_FINGERPRINT,
+    "0.2.1": EXPECTED_FINGERPRINT,
 }
 
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
@@ -48,7 +49,8 @@ IDENTITY_KEYS = {
 }
 
 RELEASE_RE = re.compile(
-    r"^[0-9]+\.[0-9]+\.[0-9]+-beta$"
+    r"^[0-9]+\.[0-9]+\.[0-9]+"
+    r"(?:-beta)?$"
 )
 
 

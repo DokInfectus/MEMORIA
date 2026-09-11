@@ -1,9 +1,25 @@
-# MEMORIA
+# MEMORIA — Persistent Memory for Local AI and LLM Systems
 
-**Local memory infrastructure for user-controlled AI systems**  
-**Lokale Gedächtnisinfrastruktur für benutzerkontrollierte KI-Systeme**
+**Self-hosted, user-controlled long-term memory for local AI**  
+**Selbst gehostetes, benutzerkontrolliertes Langzeitgedächtnis für lokale KI**
 
-**Version: 0.2.0-beta**  
+MEMORIA gives locally operated AI and LLM systems durable memory across
+conversations, models and user interfaces.
+
+MEMORIA gibt lokalen KI- und LLM-Systemen ein dauerhaftes Gedächtnis über
+Chats, Modellwechsel und Benutzeroberflächen hinweg.
+
+If you are looking for a local LLM memory application, MEMORIA provides
+the controlled memory infrastructure behind the AI interface. It works with
+Open WebUI, llama.cpp and Ollama while keeping durable storage under explicit
+user control.
+
+MEMORIA ist keine Smartphone-App, sondern eine lokale Gedächtnisinfrastruktur
+für selbst betriebene KI-Systeme. Neue Informationen bleiben zunächst Memory
+Candidates und werden erst nach ausdrücklicher Prüfung und Freigabe zu
+dauerhaften Erinnerungen.
+
+**Version: 0.2.1**  
 **Languages / Sprachen: English · Deutsch**
 
 ---
@@ -130,7 +146,7 @@ Multi-user and tenant-separated installations are not part of the initial public
 
 ### Platform support
 
-**Officially supported for MEMORIA 0.2.0-beta: Debian GNU/Linux 13 (Trixie).**
+**Target platform for MEMORIA 0.2.1: Debian GNU/Linux 13 (Trixie).**
 
 The automated MEMORIA package and installation path currently supports
 the tested `debian-13` platform profile only.
@@ -177,7 +193,7 @@ Private user content is not automatically translated merely because the interfac
 
 ### Installation
 
-MEMORIA 0.2.0-beta is a **public beta release**.
+MEMORIA 0.2.1 is the current release.
 
 The existing installer already performs setup and safety checks including:
 
@@ -200,11 +216,11 @@ ollama
 manual-advanced
 ```
 
-The complete clean-system installation workflow and signed public distribution package have been validated for MEMORIA 0.2.0-beta.
+The complete clean-system installation workflow was validated for MEMORIA 0.2.0-beta. For MEMORIA 0.2.1, release-specific validation covers the deterministic package build, signed payload verification, Python syntax validation and the complete cold-copy regression suite. A separate fresh-host installation was not repeated for this scoped release.
 
 ### Security and updates
 
-MEMORIA 0.2.0-beta uses cryptographically verified release distribution.
+The MEMORIA release process uses cryptographically verified release distribution.
 
 The release architecture is intended to include:
 
@@ -352,7 +368,7 @@ Multi-User- und mandantengetrennte Installationen gehören nicht zum ersten öff
 
 ### Plattform-Unterstützung
 
-**Offiziell unterstützt für MEMORIA 0.2.0-beta: Debian GNU/Linux 13 (Trixie).**
+**Zielplattform für MEMORIA 0.2.1: Debian GNU/Linux 13 (Trixie).**
 
 Der automatisierte MEMORIA-Paket- und Installationspfad unterstützt
 derzeit ausschließlich das getestete Plattformprofil `debian-13`.
@@ -401,7 +417,7 @@ Private Benutzerinhalte werden nicht automatisch übersetzt, nur weil die Oberfl
 
 ### Installation
 
-MEMORIA 0.2.0-beta ist ein **öffentlicher Beta-Release**.
+MEMORIA 0.2.1 ist der aktuelle Release.
 
 Der vorhandene Installer führt bereits verschiedene Setup- und Sicherheitsprüfungen durch:
 
@@ -424,11 +440,11 @@ ollama
 manual-advanced
 ```
 
-Der vollständige Clean-System-Installationsweg und das signierte öffentliche Distributionspaket wurden für MEMORIA 0.2.0-beta validiert.
+Der vollständige Clean-System-Installationsweg wurde für MEMORIA 0.2.0-beta validiert. Für MEMORIA 0.2.1 umfasst die release-spezifische Validierung den deterministischen Paketbau, die Prüfung der signierten Payload, die Python-Syntaxprüfung und die vollständige Cold-Copy-Regressionssuite. Eine separate Fresh-Host-Installation wurde für diesen gezielt abgegrenzten Release nicht wiederholt.
 
 ### Sicherheit und Updates
 
-MEMORIA 0.2.0-beta verwendet eine kryptografisch verifizierte Release-Distribution.
+Der MEMORIA-Releaseprozess verwendet eine kryptografisch verifizierte Release-Distribution.
 
 Die Release-Architektur soll enthalten:
 
@@ -481,7 +497,7 @@ Der vollständige Lizenztext steht in `LICENSE`.
 
 ## Status
 
-**MEMORIA 0.2.0-beta — Public Beta / Öffentliche Beta**
+**MEMORIA 0.2.1**
 
 **Your AI. Your data. Your memory. Your decision.**  
 **Deine KI. Deine Daten. Dein Gedächtnis. Deine Entscheidung.**

@@ -487,7 +487,7 @@ def scan_network_markers():
 MENU_GROUPS = [
     ("1", "Core / Live Tests", ["1", "2", "3", "17", "18", "19"]),
     ("2", "Configuration / Model", ["4", "44", "45", "46"]),
-    ("3", "Memory / Gedanken Speicherung", ["47", "62", "15", "48", "54", "57", "41", "49", "56", "55", "39", "40"]),
+    ("3", "Memory / Gedanken Speicherung", ["47", "62", "15", "48", "54", "59", "61", "60", "57", "41", "49", "56", "55", "39", "40"]),
     ("4", "System / Hardware", ["6", "31", "32", "37", "38"]),
     ("5", "Security / Visibility", ["5", "14"]),
     ("6", "Matrix UI Control", ["7", "9", "10", "11", "12"]),
@@ -499,9 +499,6 @@ MENU_GROUPS = [
 RELEASE_BLOCKED_ACTIONS = frozenset(
     (
         "58",
-        "59",
-        "60",
-        "61",
     )
 )
 

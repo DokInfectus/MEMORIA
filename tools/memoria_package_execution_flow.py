@@ -8,11 +8,15 @@ from memoria_package_execution_gate import run_execution_gate
 from memoria_package_executor import verify_executor_dry_run
 from memoria_package_install_plan import build_installation_plan
 from memoria_package_profile import FEATURE_LABELS
+from memoria_package_satisfaction import (
+    evaluate_package_satisfaction,
+)
 
 
 SCHEMA_VERSION = "memoria-package-execution-flow-v0.1"
 
 PlanBuilder = Callable[[str], dict[str, Any]]
+SatisfactionEvaluator = Callable[[str], dict[str, Any]]
 
 
 def blocked_result(reason: str) -> dict[str, Any]:
@@ -30,7 +34,31 @@ def run_package_execution_flow(
     feature_profile: str,
     *,
     plan_builder: PlanBuilder = build_installation_plan,
+    satisfaction_evaluator: SatisfactionEvaluator = (
+        evaluate_package_satisfaction
+    ),
 ) -> tuple[int, dict[str, Any]]:
+    satisfaction_result = satisfaction_evaluator(
+        feature_profile
+    )
+
+    if (
+        satisfaction_result.get("satisfaction_status")
+        == "SATISFIED"
+    ):
+        return 0, {
+            "schema_version": SCHEMA_VERSION,
+            "flow_status": "NOT REQUIRED",
+            "system_change_allowed": False,
+            "execution_performed": False,
+            "reason": (
+                "All required optional packages are "
+                "already installed."
+            ),
+            "executor_result": None,
+            "satisfaction_result": satisfaction_result,
+        }
+
     gate_status, authorization = run_execution_gate(
         feature_profile,
         plan_builder=plan_builder,

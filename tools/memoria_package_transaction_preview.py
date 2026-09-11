@@ -100,6 +100,25 @@ def _summary_lines(output: str) -> list[str]:
     ]
 
 
+def _summary_upgrade_count(
+    summary_lines: list[str],
+) -> int | None:
+    marker = " upgraded, "
+
+    for line in summary_lines:
+        if marker not in line:
+            continue
+
+        value = line.split(marker, 1)[0].strip()
+
+        if not value.isdigit():
+            return None
+
+        return int(value)
+
+    return None
+
+
 def _transaction_sha256(
     current_plan: dict[str, Any],
     operations: list[str],
@@ -170,6 +189,22 @@ def build_transaction_preview(
         current_plan.get("command_argv") or []
     )
 
+    if (
+        feature_profile in (
+            "local-ocr",
+            "matrix-ui+ocr",
+        )
+        and "--no-upgrade" not in planned_argv
+    ):
+        result["preview_status"] = (
+            "BLOCKED - NO-UPGRADE POLICY MISSING"
+        )
+        result["reason"] = (
+            "OCR package plan is missing required "
+            "--no-upgrade policy."
+        )
+        return 5, result
+
     simulation_argv = [
         apt_path,
         "--simulate",
@@ -219,10 +254,12 @@ def build_transaction_preview(
         if line.startswith("Remv ")
     ]
 
+    summary_lines = _summary_lines(output)
+
     result["operation_lines"] = operations
     result["operation_count"] = len(operations)
     result["removal_lines"] = removals
-    result["summary_lines"] = _summary_lines(output)
+    result["summary_lines"] = summary_lines
     result["transaction_sha256"] = (
         _transaction_sha256(
             current_plan,
@@ -238,6 +275,34 @@ def build_transaction_preview(
             "Package removal is not approvable in V0.1."
         )
         return 5, result
+
+    if feature_profile in (
+        "local-ocr",
+        "matrix-ui+ocr",
+    ):
+        upgrade_count = _summary_upgrade_count(
+            summary_lines
+        )
+
+        if upgrade_count is None:
+            result["preview_status"] = (
+                "BLOCKED - APT SUMMARY UNVERIFIED"
+            )
+            result["reason"] = (
+                "OCR no-upgrade policy requires a "
+                "verified APT package summary."
+            )
+            return 5, result
+
+        if upgrade_count != 0:
+            result["preview_status"] = (
+                "BLOCKED - PACKAGE UPGRADE PRESENT"
+            )
+            result["reason"] = (
+                "Package upgrades are not approvable "
+                "for OCR profiles."
+            )
+            return 5, result
 
     result["preview_status"] = (
         "TRANSACTION PREVIEW VERIFIED"

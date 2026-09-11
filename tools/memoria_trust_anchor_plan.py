@@ -16,10 +16,10 @@ DEFAULT_SOURCE = Path(
     "release/memoria-release-keyring.gpg"
 )
 DEFAULT_SIGNATURE = Path(
-    "release/0.2.0-beta/SHA256SUMS.sig"
+    "release/0.2.1/SHA256SUMS.sig"
 )
 DEFAULT_SUMS = Path(
-    "release/0.2.0-beta/SHA256SUMS"
+    "release/0.2.1/SHA256SUMS"
 )
 DEFAULT_TARGET = Path(
     "/usr/share/keyrings/memoria-release.gpg"

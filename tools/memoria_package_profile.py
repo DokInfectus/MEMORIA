@@ -24,6 +24,8 @@ FEATURE_LABELS = {
     for feature in (
         "minimal",
         "matrix-ui",
+        "local-ocr",
+        "matrix-ui+ocr",
     )
 }
 

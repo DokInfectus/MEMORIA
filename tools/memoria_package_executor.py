@@ -89,8 +89,15 @@ def command_shape_is_safe(
         "install",
         "--yes",
         "--no-install-recommends",
-        *packages,
     ]
+
+    if plan.get("feature_profile") in (
+        "local-ocr",
+        "matrix-ui+ocr",
+    ):
+        expected.append("--no-upgrade")
+
+    expected.extend(packages)
 
     return argv == expected
 

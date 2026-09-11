@@ -66,8 +66,8 @@ SHA256_RE = re.compile(
 )
 
 RELEASE_RE = re.compile(
-    r"^[0-9]+\.[0-9]+\.[0-9]+-"
-    r"(?:alpha|beta|rc[0-9]*)$"
+    r"^[0-9]+\.[0-9]+\.[0-9]+"
+    r"(?:-(?:alpha|beta|rc[0-9]*))?$"
 )
 
 SignatureVerifier = Callable[

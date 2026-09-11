@@ -81,8 +81,15 @@ def build_installation_plan(
             "install",
             "--yes",
             "--no-install-recommends",
-            *packages,
         ]
+
+        if feature_profile in (
+            "local-ocr",
+            "matrix-ui+ocr",
+        ):
+            argv.append("--no-upgrade")
+
+        argv.extend(packages)
 
         result["command_argv"] = argv
         result["command_preview"] = shlex.join(argv)
